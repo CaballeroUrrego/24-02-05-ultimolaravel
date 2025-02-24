@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Crear Producto</h1>
+<body class="container mt-4">
+
+    <h1 class="mb-4">Crear Producto</h1>
 
     <form action="{{ route('products.store') }}" method="POST">
         @csrf
-        <label>Nombre:</label>
-        <input type="text" name="nombre" required><br>
+        <div class="mb-3">
+            <label class="form-label">Nombre:</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
 
-        <label>Descripción:</label>
-        <textarea name="descripcion" required></textarea><br>
+        <div class="mb-3">
+            <label class="form-label">Descripción:</label>
+            <textarea name="descripcion" class="form-control" required></textarea>
+        </div>
 
-        <label>Precio:</label>
-        <input type="number" name="precio" required><br>
+        <div class="mb-3">
+            <label class="form-label">Precio:</label>
+            <input type="number" name="precio" class="form-control" required>
+        </div>
 
-        <label>Stock:</label>
-        <input type="number" name="stock" required><br>
+        <div class="mb-3">
+            <label class="form-label">Stock:</label>
+            <input type="number" name="stock" class="form-control" required>
+        </div>
 
-        <button type="submit">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 
-    <a href="{{ route('products.index') }}">Volver a la lista</a>
+    <a href="{{ route('products.index') }}" class="btn btn-secondary mt-3">Volver a la lista</a>
+
 </body>
 </html>
