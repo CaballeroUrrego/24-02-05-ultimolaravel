@@ -27,3 +27,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // 📌 CRUD de productos (Crea, Lee, Actualiza y Elimina productos)
 Route::resource('products', ProductController::class);
+
