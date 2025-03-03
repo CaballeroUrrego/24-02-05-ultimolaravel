@@ -20,8 +20,16 @@ return new class extends Migration
             $table->decimal('precio', 8, 2);
             $table->integer('stock');
             $table->timestamps();
+
+$table->text('descripcion')->nullable();
+$table->decimal('precio');
+$table->string('nombre');
+
+
         });
     }
+
+
 
     /**
      * Reverse the migrations.
