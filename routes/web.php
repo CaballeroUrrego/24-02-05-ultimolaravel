@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 // 📌 Página de inicio: Redirige a la vista de login
 Route::get('/', function () {
-    return view('auth.login'); 
+    return view('auth.login');
 });
 
 // 📌 Rutas de autenticación (login, registro, logout)
@@ -28,4 +28,11 @@ Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware(
 // 📌 Protección del CRUD de productos: Solo accesible si el usuario está autenticado
 Route::middleware(['auth'])->group(function () {
     Route::resource('products', ProductController::class);
+});
+
+use App\Http\Controllers\ProfileController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
