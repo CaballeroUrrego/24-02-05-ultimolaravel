@@ -35,7 +35,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
+                                @foreach ($products as $product) <!-- Error corregido🤦‍♂️ -->
                                     <tr>
                                         <td>{{ $product->id }}</td>
                                         <td>{{ $product->nombre }}</td>

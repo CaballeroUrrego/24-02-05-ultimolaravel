@@ -12,7 +12,7 @@ class ProductController extends Controller
         $products = Product::all(); // Trae todos los productos de la base de datos
         return view('crud.index', compact('products')); // Asegúrate de que la vista está bien referenciada
     }
-// Trae todos los productos de la base de datos
+// Error de navegacion
 
     public function create()
     {
