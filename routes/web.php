@@ -28,7 +28,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware(
 
 // 📌 Protección del CRUD de productos y perfil: Solo accesible si el usuario está autenticado
 Route::middleware(['auth'])->group(function () {
-    Route::resource('products', ProductController::class); // Rutas CRUD para productos, protegidas por el middleware 'auth'
+    Route::resource('products', ProductController::class);
+    // Rutas CRUD para productos, protegidas por el middleware 'auth'
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit'); // Ruta para editar el perfil
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update'); // Ruta para actualizar el perfil
 });

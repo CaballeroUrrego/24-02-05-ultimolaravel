@@ -18,7 +18,7 @@
                     @endif
 
                     <!-- Mensaje indicando que el usuario ha iniciado sesión -->
-                    {{ __('You are logged in!') }}
+                    {{ __('¡Ya has iniciado sesión!') }}
 
                     <div class="mt-4">
                         <!-- Mensaje de bienvenida con el nombre del usuario -->
